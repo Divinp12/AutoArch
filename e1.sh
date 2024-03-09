@@ -56,6 +56,4 @@ nano /etc/sudoers;
 
 END
 
-exit;
-
 reboot
