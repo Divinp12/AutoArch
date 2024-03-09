@@ -26,7 +26,9 @@ pacstrap /mnt base linux linux-firmware;
 
 genfstab -U -p /mnt >> /mnt/etc/fstab;
 
-arch-chroot /mnt echo arch >> /etc/hostname;
+arch-chroot /mnt /bin/bash <<END
+
+echo arch >> /etc/hostname;
 
 passwd root;
 
@@ -51,6 +53,8 @@ grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
 grub-mkconfig -o /boot/grub/grub.cfg;
 
 nano /etc/sudoers;
+
+END
 
 exit;
 
