@@ -50,8 +50,6 @@ grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
 
 grub-mkconfig -o /boot/grub/grub.cfg;
 
-nano /etc/sudoers;
-
 END
 
 reboot
