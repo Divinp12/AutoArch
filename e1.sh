@@ -1,7 +1,5 @@
 #!/bin/bash
 
-dd if=/dev/zero of=/dev/sda status=progress;
-
 cfdisk /dev/sda;
 
 mkfs.fat -F32 /dev/sda1;
