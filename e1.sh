@@ -36,7 +36,7 @@ passwd arch;
 
 mkinitcpio -P;
 
-pacman -S networkmanager grub efibootmgr xf86-video-intel sudo mesa fastfetch lxdm nano xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf pipewire pipewire-pulse pipewire-media-session pavucontrol;
+pacman -S networkmanager grub efibootmgr xf86-video-intel sudo mesa fastfetch lxdm nano xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm;
 
 systemctl enable lxdm;
 
