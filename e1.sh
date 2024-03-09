@@ -24,7 +24,7 @@ pacstrap /mnt base linux linux-firmware;
 
 genfstab -U -p /mnt >> /mnt/etc/fstab;
 
-arch-chroot /mnt /bin/bash <<END
+arch-chroot /mnt <<END
 
 echo arch >> /etc/hostname;
 
