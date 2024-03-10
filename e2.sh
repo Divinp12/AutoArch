@@ -1,7 +1,5 @@
 #!/bin/bash
 
-arch-chroot /mnt <<END
-
 echo arch >> /etc/hostname;
 
 passwd root;
@@ -25,7 +23,5 @@ systemctl disable systemd-timesyncd.service;
 grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
 
 grub-mkconfig -o /boot/grub/grub.cfg;
-
-END
 
 reboot
