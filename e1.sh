@@ -24,6 +24,6 @@ pacstrap /mnt base linux linux-firmware;
 
 genfstab -U -p /mnt >> /mnt/etc/fstab;
 
-cp e2.sh /mnt
+cp e2.sh /mnt;
 
-arch-chroot /mnt /e2.sh
+arch-chroot /mnt /e2.sh && reboot
