@@ -1,5 +1,7 @@
 !#/bin/bash
 
+sudo rm -r /boot/loader/loader.conf;
+
 git clone https://aur.archlinux.org/yay.git;
 
 sudo chmod 777 yay;
