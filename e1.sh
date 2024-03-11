@@ -17,7 +17,7 @@ mount /dev/sda1 /mnt/boot/EFI;
 
 mount /dev/sda3 /mnt/home;
 
-pacstrap /mnt base linux linux-firmware;
+pacstrap /mnt base base-devel linux linux-firmware;
 
 genfstab -U -p /mnt >> /mnt/etc/fstab;
 
