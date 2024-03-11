@@ -10,11 +10,9 @@ mount /dev/sda2 /mnt;
 
 mkdir /mnt/boot;
 mkdir /mnt/boot/EFI;
-
 mkdir /mnt/home;
 
 mount /dev/sda1 /mnt/boot/EFI;
-
 mount /dev/sda3 /mnt/home;
 
 pacstrap /mnt base base-devel linux linux-firmware;
