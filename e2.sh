@@ -20,6 +20,10 @@ systemctl disable NetworkManager-wait-online.service;
 
 systemctl disable systemd-timesyncd.service;
 
+echo Defaults:arch !authenticate >> /etc/sudoers;
+
+echo 
+
 grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
 
 grub-mkconfig -o /boot/grub/grub.cfg
