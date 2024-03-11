@@ -23,3 +23,5 @@ sudo rm -r ~/.bashrc && sudo mv ~/AutoArch/.bashrc ~;
 sudo rm -r /etc/pacman.d/mirrorlist && sudo mv ~/AutoArch/mirrorlist /etc/pacman.d;
 
 sudo rm -r /etc/pacman.d/mirrorlist-arch && sudo mv ~/AutoArch/mirrorlist-arch /etc/pacman.d;
+
+sudo pacman -Syyu --noconfirm;
