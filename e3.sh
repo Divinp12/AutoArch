@@ -1,7 +1,5 @@
 !#/bin/bash
 
-sudo rm -r /boot/loader/loader.conf;
-
 git clone https://aur.archlinux.org/yay.git;
 
 sudo chmod 777 yay;
@@ -22,9 +20,6 @@ sudo rm -r /etc/pacman.d/mirrorlist && sudo mv ~/AutoArch/mirrorlist /etc/pacman
 sudo rm -r /etc/pacman.d/mirrorlist-arch && sudo mv ~/AutoArch/mirrorlist-arch /etc/pacman.d;
 
 sudo pacman -Syyu --noconfirm;
-
-sudo nano /boot/loader/entries/*x.conf;
-
-sudo mkinitcpio -p linux;
+sudo pacman -Syyu --noconfirm;
 
 sudo rm -r ~/AutoArch && reboot
