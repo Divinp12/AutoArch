@@ -25,3 +25,5 @@ sudo rm -r /etc/pacman.d/mirrorlist && sudo mv ~/AutoArch/mirrorlist /etc/pacman
 sudo rm -r /etc/pacman.d/mirrorlist-arch && sudo mv ~/AutoArch/mirrorlist-arch /etc/pacman.d;
 
 sudo pacman -Syyu --noconfirm;
+
+sudo nano /boot/loader/entries/*x.conf;
