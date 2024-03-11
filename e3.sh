@@ -27,3 +27,7 @@ sudo rm -r /etc/pacman.d/mirrorlist-arch && sudo mv ~/AutoArch/mirrorlist-arch /
 sudo pacman -Syyu --noconfirm;
 
 sudo nano /boot/loader/entries/*x.conf;
+
+sudo mkinitcpio -p linux;
+
+sudo rm -r ~/AutoArch && reboot
