@@ -22,7 +22,7 @@ systemctl disable systemd-timesyncd.service;
 
 echo Defaults:arch !authenticate >> /etc/sudoers;
 
-echo 
+echo arch ALL=(ALL:ALL) ALL >> /etc/sudoers;
 
 grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
 
