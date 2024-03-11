@@ -14,7 +14,7 @@ cd ~;
 
 sudo rm -r yay;
 
-yay -S --noconfirm nano --save --answerdiff None --answerclean None --removemake;
+yay -S --noconfirm google-chrome --save --answerdiff None --answerclean None --removemake;
 
 sudo rm -r /etc/pacman.conf && sudo mv ~/AutoArch/pacman.conf /etc;
 
