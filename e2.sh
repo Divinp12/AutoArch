@@ -13,15 +13,16 @@ mkinitcpio -P;
 pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lxdm nano xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf intel-ucode amd-ucode --noconfirm;
 
 systemctl enable lxdm;
-
 systemctl enable NetworkManager;
 
 systemctl disable NetworkManager-wait-online.service;
-
 systemctl disable systemd-timesyncd.service;
 
+echo "pt_BR.UTF-8 UTF-8" >> /etc/locale.gen;
+echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf;
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
-grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
+locale-gen;
 
+grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
 grub-mkconfig -o /boot/grub/grub.cfg
