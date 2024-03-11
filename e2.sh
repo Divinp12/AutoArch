@@ -18,7 +18,7 @@ systemctl enable NetworkManager;
 systemctl disable NetworkManager-wait-online.service;
 systemctl disable systemd-timesyncd.service;
 
-ln -sf /usr/share/zoneinfo/America/Sao_paulo /etc/localtime;
+ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime;
 echo "pt_BR.UTF-8 UTF-8" >> /etc/locale.gen;
 echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf;
 hwclock --systohc && locale-gen;
