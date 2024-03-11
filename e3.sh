@@ -3,7 +3,7 @@
 sudo rm -r /etc/pacman.conf && sudo mv ~/AutoArch/pacman.conf /etc;
 sudo rm -r ~/.bashrc && sudo mv ~/AutoArch/.bashrc ~;
 sudo rm -r /etc/pacman.d/mirrorlist && sudo mv ~/AutoArch/mirrorlist /etc/pacman.d;
-sudo rm -r /etc/pacman.d/mirrorlist-arch && sudo mv ~/AutoArch/mirrorlist-arch /etc/pacman.d;
+sudo rm -r /etc/pacman.d/mirrorlist-arch && su root echo "Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist-arch;
 
 sudo pacman -Syyu --noconfirm;
 
