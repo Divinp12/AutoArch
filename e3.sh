@@ -5,7 +5,7 @@ sudo rm -r ~/.bashrc && sudo mv ~/AutoArch/.bashrc ~;
 sudo rm -r /etc/pacman.d/mirrorlist && sudo su root echo "Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist;
 sudo rm -r /etc/pacman.d/mirrorlist-arch && sudo su root echo "Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist-arch;
 
-sudo pacman -Syyu --noconfirm;
+sudo su arch pacman -Syyu --noconfirm;
 
 git clone https://aur.archlinux.org/yay.git;
 sudo chmod 777 yay;
