@@ -6,7 +6,7 @@ echo "alias d='sudo pacman -Rsc'" >> /home/arch/.bashrc;
 
 echo "alias nano='sudo nano'" >> /home/arch/.bashrc;
 
-echo "alias addsuporte-bluetooth='yay -S --noconfirm bluez bluez-tools bluez-utils blueman; sudo systemctl start bluetooth.service; sudo systemctl enable bluetooth.service'";
+echo "alias addsuporte-bluetooth='yay -S --noconfirm bluez bluez-tools bluez-utils blueman; sudo systemctl start bluetooth.service; sudo systemctl enable bluetooth.service'" >> /home/arch/.bashrc;
 
 echo "sudo pacman-key --refresh-keys;" >> /home/arch/.bashrc;
 
