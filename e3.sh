@@ -1,8 +1,6 @@
 !#/bin/bash
 
 sudo rm -r /etc/pacman.conf && sudo mv ~/AutoArch/pacman.conf /etc;
-sudo rm -r ~/.bashrc && sudo mv ~/AutoArch/.bashrc ~;
-
 sudo pacman -Syyu --noconfirm;
 
 git clone https://aur.archlinux.org/yay.git; sudo chmod 777 yay; cd yay; makepkg -si --noconfirm; cd ~; sudo rm -r yay;
