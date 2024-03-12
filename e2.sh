@@ -25,5 +25,10 @@ hwclock --systohc && locale-gen;
 
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
+rm -r /etc/pacman.d/mirrorlist && echo "Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist;
+rm -r /etc/pacman.d/mirrorlist-arch && echo "Server=https://mirror.ufscar.br/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist-arch;
+
+pacman -Syyu --noconfirm;
+
 grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
 grub-mkconfig -o /boot/grub/grub.cfg
