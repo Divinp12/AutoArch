@@ -1,4 +1,4 @@
-SCRIPT DE INSTALAÇÃO PARA O ARCH LINUX VIA GITHUB. SIMPLES E FÁCIL DE INSTALAR...
+-----------------------------INSTALAÇÃO-----------------------
 
 PASSO 1: BAIXE A ISO DO ARCH LINUX NO SITE OFICIAL NO LINK https://mirror.ufscar.br/archlinux/iso/2024.03.01/archlinux-x86_64.iso
 
@@ -20,7 +20,7 @@ PASSO 9: DIGITE git clone https://github.com/Divinp12/AutoArch.git; sudo chmod 7
 
 FINAL: SEU PC IRÁ REINICIA DE NOVO E PRONTO, DIVIRTA-SE ;)
 
-
+-----------------------INFORMAÇÕES BASICAS---------------------------
 
 INSTALAR PACOTES VIA AUR PELO TERMINAL (OPCIONAL)
 
