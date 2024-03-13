@@ -31,7 +31,7 @@ echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pac
 rm -r /etc/pacman.d/mirrorlist-arch;
 echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist-arch;
 
-rm -r /home/arch/.bashrc
+rm -r /home/arch/.bashrc;
 echo "alias i='yay -S --noconfirm'" >> /home/arch/.bashrc;
 echo "alias d='sudo pacman -Rsc'" >> /home/arch/.bashrc;
 echo "alias nano='sudo nano'" >> /home/arch/.bashrc;
@@ -44,6 +44,23 @@ echo "sudo pacman -Scc --noconfirm;" >> /home/arch/.bashrc;
 echo "sudo history -c;" >> /home/arch/.bashrc;
 echo "clear;" >> /home/arch/.bashrc;
 echo "fastfetch" >> /home/arch/.bashrc;
+
+rm -r /etc/pacmam.conf;
+echo "[options]" >> /etc/pacman.conf;
+echo "HoldPkg=pacman glibc" >> /etc/pacman.conf;
+echo "Architecture=auto" >> /etc/pacman.conf;
+echo "CheckSpace" >> /etc/pacman.conf;
+echo "ParallelDownloads=2" >> /etc/pacman.conf;
+echo "SigLevel=Required DatabaseOptional" >> /etc/pacman.conf;
+echo "LocalFileSigLevel=Optional" >> /etc/pacman.conf;
+echo "[core]" >> /etc/pacman.conf;
+echo "Include=/etc/pacman.d/mirrorlist" >> /etc/pacman.conf;
+echo "[extra]" >> /etc/pacman.conf;
+echo "Include=/etc/pacman.d/mirrorlist" >> /etc/pacman.conf;
+echo "[multilib]" >> /etc/pacman.conf;
+echo "Include=/etc/pacman.d/mirrorlist" >> /etc/pacman.conf;
+echo "[community]" >> /etc/pacman.conf;
+echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 
 pacman -Syyu --noconfirm;
 
