@@ -19,3 +19,61 @@ PASSO 8: APÓS O SEU PC REINICIAR AUTOMATICAMENTE VOCÊ ENTRARÁ NA TELA DE LOGI
 PASSO 9: DIGITE git clone https://github.com/Divinp12/AutoArch.git; sudo chmod 777 AutoArch/e3.sh; cd AutoArch; ./e3.sh
 
 FINAL: SEU PC IRÁ REINICIA DE NOVO E PRONTO, DIVIRTA-SE ;)
+
+
+
+INSTALAR PACOTES VIA AUR PELO TERMINAL (OPCIONAL)
+
+google chrome: i google-chrome
+
+visualizador de fotos: i ristretto
+
+(des)compactador de arquivos: i xarchiver
+
+obs studio: i obs-studio
+
+media player: i vlc
+
+wine: i wine
+
+telegram: i telegram-desktop
+
+discord: i discord
+
+steam: i steam
+
+java: i jdk
+
+mupen64 (emulador de nintendo 64): i mupen64plus-qt
+
+pcsx2 (emulador de playstation 2): i pcsx2-git
+
+rpcs3 (emulador de playstation 3): i rpcs3-git
+
+grapejuice (roblox): i grapejuice
+
+parsec: i parsec-bin
+
+hidamari (papel de parede animado): i hidamari
+
+heroic games launcher: i heroic-games-launcher
+
+lutris: i lutris
+
+mangohud: i mangohud lib32-mangohud
+____________________________________________________________________________________________________
+GAMEMODE (OPCIONAL)
+
+Pacote que prioriza o sistema a dar mais atenção ao jogo:
+
+Instalar: i gamemode lib32-gamemode
+
+Use na steam na “opções de inicialização”= gamemoderun %command%
+
+Use em jogos “executáveis”= gamemoderun NOME_DO_JOGO OU COMANDO_DE_EXECUÇÃO
+____________________________________________________________________________________________________
+
+CASO NÃO TENHA O PACOTE QUE QUEIRA POR AQUI NESTA PÁGINA, PROCURE PELO SITE OFICIAL DO ARCH LINUX:
+
+https://aur.archlinux.org/packages
+
