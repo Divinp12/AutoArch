@@ -22,7 +22,7 @@ FINAL: SEU PC IRÁ REINICIA DE NOVO E PRONTO, DIVIRTA-SE ;)
 
 -----------------------INFORMAÇÕES BASICAS---------------------------
 
-INSTALAR PACOTES VIA AUR PELO TERMINAL (OPCIONAL)
+INSTALAR PACOTES PELO TERMINAL (OPCIONAL)
 
 google chrome: i google-chrome
 
