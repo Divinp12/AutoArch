@@ -31,6 +31,8 @@ echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pac
 rm -r /etc/pacman.d/mirrorlist-arch;
 echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist-arch;
 
+pacman -Syyu --noconfirm;
+
 rm -r /home/arch/.bashrc;
 echo "alias i='yay -S --noconfirm'" >> /home/arch/.bashrc;
 echo "alias d='sudo pacman -Rsc'" >> /home/arch/.bashrc;
