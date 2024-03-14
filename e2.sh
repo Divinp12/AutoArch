@@ -47,6 +47,8 @@ echo "sudo history -c;" >> /home/arch/.bashrc;
 echo "clear;" >> /home/arch/.bashrc;
 echo "fastfetch" >> /home/arch/.bashrc;
 
+pacman -Syyu --noconfirm;
+
 rm -r /etc/pacmam.conf;
 echo "[options]" >> /etc/pacman.conf;
 echo "HoldPkg=pacman glibc" >> /etc/pacman.conf;
