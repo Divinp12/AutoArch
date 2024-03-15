@@ -23,18 +23,18 @@ hwclock --systohc && locale-gen;
 
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
-rm -r /etc/pacman.d/mirrorlist;
-rm -r /etc/pacman.d/mirrorlist;
+rm -rf /etc/pacman.d/mirrorlist;
+rm -rf /etc/pacman.d/mirrorlist;
 echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist;
 
-rm -r /etc/pacman.d/mirrorlist-arch;
-rm -r /etc/pacman.d/mirrorlist-arch;
+rm -rf /etc/pacman.d/mirrorlist-arch;
+rm -rf /etc/pacman.d/mirrorlist-arch;
 echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist-arch;
 
 pacman -Syyu --noconfirm;
 
-rm -r /home/arch/.bashrc;
-rm -r /home/arch/.bashrc;
+rm -rf /home/arch/.bashrc;
+rm -rf /home/arch/.bashrc;
 echo "alias i='yay -S --noconfirm'" >> /home/arch/.bashrc;
 echo "alias d='sudo pacman -Rsc'" >> /home/arch/.bashrc;
 echo "alias nano='sudo nano'" >> /home/arch/.bashrc;
@@ -50,8 +50,8 @@ echo "fastfetch" >> /home/arch/.bashrc;
 
 pacman -Syyu --noconfirm;
 
-rm -r /etc/pacmam.conf;
-rm -r /etc/pacman.conf;
+rm -rf /etc/pacmam.conf;
+rm -rf /etc/pacman.conf;
 echo "[options]" >> /etc/pacman.conf;
 echo "HoldPkg=pacman glibc" >> /etc/pacman.conf;
 echo "Architecture=auto" >> /etc/pacman.conf;
