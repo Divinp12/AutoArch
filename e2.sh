@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo arch >> /etc/hostname;
+echo arch > /etc/hostname;
 passwd root;
 
 useradd -m -g users -G wheel arch;
