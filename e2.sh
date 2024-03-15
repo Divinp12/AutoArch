@@ -17,8 +17,8 @@ systemctl disable NetworkManager-wait-online.service;
 systemctl disable systemd-timesyncd.service;
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime;
-echo "pt_BR.UTF-8 UTF-8" >> /etc/locale.gen;
-echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf;
+echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen;
+echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
 hwclock --systohc && locale-gen;
 
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
@@ -35,7 +35,7 @@ pacman -Syyu --noconfirm;
 
 rm -rf /home/arch/.bashrc;
 rm -rf /home/arch/.bashrc;
-echo "alias i='yay -S --noconfirm'" >> /home/arch/.bashrc;
+echo "alias i='yay -S --noconfirm'" > /home/arch/.bashrc;
 echo "alias d='sudo pacman -Rsc'" >> /home/arch/.bashrc;
 echo "alias nano='sudo nano'" >> /home/arch/.bashrc;
 echo "alias addsuporte-bluetooth='yay -S --noconfirm bluez bluez-tools bluez-utils blueman; sudo systemctl start bluetooth.service; sudo systemctl enable bluetooth.service'" >> /home/arch/.bashrc;
@@ -52,7 +52,7 @@ pacman -Syyu --noconfirm;
 
 rm -rf /etc/pacmam.conf;
 rm -rf /etc/pacman.conf;
-echo "[options]" >> /etc/pacman.conf;
+echo "[options]" > /etc/pacman.conf;
 echo "HoldPkg=pacman glibc" >> /etc/pacman.conf;
 echo "Architecture=auto" >> /etc/pacman.conf;
 echo "CheckSpace" >> /etc/pacman.conf;
