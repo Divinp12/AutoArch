@@ -10,7 +10,7 @@ PASSO 4: APÓS APARECER O "Root@Archiso" TIRE O PENDRIVE DO PC.
 
 PASSO 5: DIGITE pacman -Sy; pacman -S git --noconfirm; git clone https://github.com/Divinp12/AutoArch.git; pacman -Rsc git; mv AutoArch/e1.sh ~; mv AutoArch/e2.sh ~; chmod 777 e1.sh; chmod 777 e2.sh; ./e1.sh
 
-PASSO 6: PARTICIONE AS PARTIÇÕES COM O SEGUINTE INFORMAÇÕES 1G BOOT BIOS, 5G NORMAL E "RESTO"G E APERTE EM "QUIT".
+PASSO 6: PARTICIONE AS PARTIÇÕES COM O SEGUINTE INFORMAÇÕES 1G BOOT BIOS, 20G NORMAL E "RESTO"G E APERTE EM "QUIT".
 
 PASSO 7: APÓS APARECER "new passworld" COLOQUE "arch" E SE APARECER DE NOVO FAÇA A MESMA COISA.
 
