@@ -12,11 +12,9 @@ PASSO 5: DIGITE pacman -Sy; pacman -S git --noconfirm; git clone https://github.
 
 PASSO 6: PARTICIONE AS PARTIÇÕES COM O SEGUINTE INFORMAÇÕES 1G BOOT BIOS, 20G NORMAL E "RESTO"G E APERTE EM "QUIT".
 
-PASSO 7: APÓS APARECER "new passworld" COLOQUE "arch" E SE APARECER DE NOVO FAÇA A MESMA COISA.
+PASSO 7: APÓS O SEU PC REINICIAR AUTOMATICAMENTE VOCÊ ENTRARÁ NA TELA DE LOGIN, ENTÃO SE LOGUE E ENTRE NO TERMINAL.
 
-PASSO 8: APÓS O SEU PC REINICIAR AUTOMATICAMENTE VOCÊ ENTRARÁ NA TELA DE LOGIN, ENTÃO SE LOGUE E ENTRE NO TERMINAL.
-
-PASSO 9: DIGITE git clone https://github.com/Divinp12/AutoArch.git; sudo chmod 777 AutoArch/e3.sh; cd AutoArch; ./e3.sh
+PASSO 8: DIGITE git clone https://github.com/Divinp12/AutoArch.git; sudo chmod 777 AutoArch/e3.sh; cd AutoArch; ./e3.sh
 
 FINAL: SEU PC IRÁ REINICIA DE NOVO E PRONTO, DIVIRTA-SE ;)
 
