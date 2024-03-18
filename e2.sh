@@ -70,7 +70,11 @@ echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 
 pacman -Syyu --noconfirm;
 
-echo "[daemon]" > /etc/lxdm/lxdm.conf;
+rm -rf /etc/lxdm/lxdm.conf;
+rm -rf /etc/lxdm/lxdm.conf;
+echo "[default]" > /etc/lxdm/lxdm.conf;
+echo "session=/usr/bin/xfce4-session" >> /etc/lxdm/lxdm.conf;
+echo "[daemon]" >> /etc/lxdm/lxdm.conf;
 echo "autologin=arch" >> /etc/lxdm/lxdm.conf;
 
 pacman -Syyu --noconfirm;
