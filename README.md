@@ -12,8 +12,6 @@ PASSO 5: DIGITE pacman -Sy; pacman -S git --noconfirm; git clone https://github.
 
 PASSO 6: APÓS O SEU PC REINICIAR AUTOMATICAMENTE VOCÊ ENTRARÁ NA TELA DE LOGIN, ENTÃO SE LOGUE E ENTRE NO TERMINAL.
 
-PASSO 7: DIGITE git clone https://github.com/Divinp12/AutoArch.git; sudo chmod 777 AutoArch/e3.sh; cd AutoArch; ./e3.sh
-
 FINAL: SEU PC IRÁ REINICIA DE NOVO E PRONTO, DIVIRTA-SE ;)
 
 -----------------------INFORMAÇÕES BASICAS---------------------------
