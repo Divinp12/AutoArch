@@ -3,14 +3,10 @@
 dd if=/dev/zero of=/dev/sda status=progress
 
 parted /dev/sda mklabel gpt \
-mkpart "BIOS Boot" 1MB 1GB \
+mkpart "BIOS Boot" fat32 1MB 1GB \
 set 1 bios_grub on \
-mkpart "Root" 1GB 21GB \
-mkpart "Home" 21GB 100%;
-
-mkfs.fat -F32 /dev/sda1;
-mkfs.ext4 /dev/sda2;
-mkfs.ext4 /dev/sda3;
+mkpart "Root" ext4 1GB 21GB \
+mkpart "Home" ext4 21GB 100%;
 
 mount /dev/sda2 /mnt;
 
