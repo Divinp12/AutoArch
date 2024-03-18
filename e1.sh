@@ -3,7 +3,7 @@
 dd if=/dev/zero of=/dev/sda status=progress
 
 parted /dev/sda mklabel gpt \
-mkpart "BIOS Boot" fat32 1MB 1GB \
+mkpart "Boot" fat32 1MB 1GB \
 set 1 bios_grub on \
 mkpart "Root" ext4 1GB 21GB \
 mkpart "Home" ext4 21GB 100%;
