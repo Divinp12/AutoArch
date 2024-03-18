@@ -10,9 +10,7 @@ PASSO 4: APÓS APARECER O "Root@Archiso" TIRE O PENDRIVE DO PC.
 
 PASSO 5: DIGITE pacman -Sy; pacman -S git --noconfirm; git clone https://github.com/Divinp12/AutoArch.git; pacman -Rsc git; mv AutoArch/e1.sh ~; mv AutoArch/e2.sh ~; chmod 777 e1.sh; chmod 777 e2.sh; ./e1.sh
 
-PASSO 6: APÓS O SEU PC REINICIAR AUTOMATICAMENTE VOCÊ ENTRARÁ NA TELA DE LOGIN, ENTÃO SE LOGUE E ENTRE NO TERMINAL.
-
-FINAL: SEU PC IRÁ REINICIA DE NOVO E PRONTO, DIVIRTA-SE ;)
+ESPERE E DIVIRTA-SE ;)
 
 -----------------------INFORMAÇÕES BASICAS---------------------------
 
