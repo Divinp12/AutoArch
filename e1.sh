@@ -2,7 +2,10 @@
 
 dd if=/dev/zero of=/dev/sda status=progress
 
-cfdisk /dev/sda;
+parted /dev/sda mklabel gpt \
+mkpart "BIOS Boot" 1MB 1GB \
+mkpart "Root" 1GB 21GB \
+mkpart "Home" 21GB 100%;
 
 mkfs.fat -F32 /dev/sda1;
 mkfs.ext4 /dev/sda2;
