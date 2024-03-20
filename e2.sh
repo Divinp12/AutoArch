@@ -35,7 +35,7 @@ pacman -Syyu --noconfirm;
 
 rm -rf /home/arch/.bashrc;
 rm -rf /home/arch/.bashrc;
-echo "alias i='yay -S --noconfirm'" > /home/arch/.bashrc;
+echo "alias i='yay -Ss --noconfirm'" > /home/arch/.bashrc;
 echo "alias d='sudo pacman -Rsc'" >> /home/arch/.bashrc;
 echo "alias nano='sudo nano'" >> /home/arch/.bashrc;
 echo "alias addsuporte-bluetooth='yay -S --noconfirm bluez bluez-tools bluez-utils blueman; sudo systemctl start bluetooth.service; sudo systemctl enable bluetooth.service'" >> /home/arch/.bashrc;
