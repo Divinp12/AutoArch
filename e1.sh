@@ -1,4 +1,5 @@
 #!/bin/bash
+mv AutoArch/e2.sh ~ && chmod 777 e2.sh;
 
 dd if=/dev/zero of=/dev/sda status=progress
 
