@@ -4,11 +4,11 @@ mv AutoArch/e2.sh ~; chmod 777 e2.sh;
 
 dd if=/dev/zero of=/dev/sda status=progress
 
-parted /dev/sda mklabel gpt \
-mkpart "B" fat32 1MB 1GB \
-set 1 esp on \
-mkpart "/" ext4 1GB 21GB \
-mkpart "H" ext4 21GB 100%;
+cfdisk /dev/sda;
+
+mkfs.fat -F32 /dev/sda1;
+mkfs.ext4 /dev/sda2;
+mkfs.ext4 /dev/sda3;
 
 mount /dev/sda2 /mnt;
 
