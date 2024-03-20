@@ -6,9 +6,7 @@ PASSO 2: CRIE UM PENDRIVE FAT32 E EXTRAIA OS ARQUIVOS DA ISO NO PENDRIVE.
 
 PASSO 3: REINICIE O PC E INICIE O PENDRIVE COMO UEFI OU GPT (BIOS LEGACY NÃO FUNCIONA)
 
-PASSO 4: APÓS APARECER O "Root@Archiso" TIRE O PENDRIVE DO PC.
-
-PASSO 5: DIGITE pacman -Sy; pacman -S git --noconfirm; git clone https://github.com/Divinp12/AutoArch.git; pacman -Rsc git --noconfirm; mv AutoArch/e1.sh ~; chmod 777 e1.sh; ./e1.sh
+PASSO 4: APÓS APARECER O "Root@Archiso" TIRE O PENDRIVE DO PC E DIGITE: pacman -Sy; pacman -S git --noconfirm; git clone https://github.com/Divinp12/AutoArch.git; pacman -Rsc git --noconfirm; mv AutoArch/e1.sh ~; chmod 777 e1.sh; ./e1.sh
 
 ESPERE E DIVIRTA-SE ;)
 
