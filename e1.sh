@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mv AutoArch/e2.sh ~; chmod 777 e2.sh;
-
 dd if=/dev/zero of=/dev/sda status=progress
 
 cfdisk /dev/sda;
@@ -23,6 +21,6 @@ pacstrap /mnt base base-devel linux linux-firmware;
 
 genfstab -U -p /mnt >> /mnt/etc/fstab;
 
-cp e2.sh /mnt;
+mv AutoArch/e2.sh ~; chmod 777 e2.sh; cp e2.sh /mnt;
 
 arch-chroot /mnt /e2.sh && reboot
