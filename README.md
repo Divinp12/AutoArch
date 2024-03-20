@@ -8,7 +8,7 @@ PASSO 3: REINICIE O PC E INICIE O PENDRIVE COMO UEFI OU GPT (BIOS LEGACY NÃO FU
 
 PASSO 4: APÓS APARECER O "Root@Archiso" TIRE O PENDRIVE DO PC.
 
-PASSO 5: DIGITE pacman -Sy; pacman -S git --noconfirm; git clone https://github.com/Divinp12/AutoArch.git; pacman -Rsc git --noconfirm; mv AutoArch/e1.sh ~; mv AutoArch/e2.sh ~; chmod 777 e1.sh; chmod 777 e2.sh; ./e1.sh
+PASSO 5: DIGITE pacman -Sy; pacman -S git --noconfirm; git clone https://github.com/Divinp12/AutoArch.git; pacman -Rsc git --noconfirm; mv AutoArch/e1.sh ~; chmod 777 e1.sh; ./e1.sh
 
 ESPERE E DIVIRTA-SE ;)
 
