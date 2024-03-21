@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo dd if=/dev/zero of=/dev/sda bs=1M status=progress;
+
 parted /dev/sda mkpart primary 1MiB 1GB;
 parted /dev/sda set 1 esp on;
 parted /dev/sda mkpart primary 1GB 21GB;
