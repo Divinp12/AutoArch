@@ -23,7 +23,7 @@ hwclock --systohc && locale-gen;
 
 sed -i '/^\[Seat:\*]/a autologin-user=arch' /etc/lightdm/lightdm.conf;
 groupadd -r autologin;
-gpasswd -a username autologin;
+gpasswd -a arch autologin;
 
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
