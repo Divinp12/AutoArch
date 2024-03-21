@@ -8,7 +8,7 @@ yes arch | passwd arch;
 
 mkinitcpio -P; mkinitcpio -P; mkinitcpio -P;
 
-pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lightdm xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf intel-ucode amd-ucode --noconfirm;
+pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lightdm xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf pipewire pipewire-pulse pipewire-media-session pavucontrol intel-ucode amd-ucode --noconfirm;
 
 systemctl enable lightdm;
 systemctl enable NetworkManager;
@@ -71,8 +71,8 @@ echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 pacman -Syyu --noconfirm;
 
 git clone https://aur.archlinux.org/yay.git; chmod 777 yay; cd yay; makepkg -si --noconfirm; cd ..; rm -rf yay;
-yay -S --noconfirm google-chrome pipewire pipewire-pulse pipewire-media-session pavucontrol mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-validation-layers lib32-vulkan-validation-layers vulkan-tools lib32-vulkan-tools vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-headers mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --save --answerdiff None --answerclean None --removemake;
-yay -S --noconfirm google-chrome pipewire pipewire-pulse pipewire-media-session pavucontrol mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-validation-layers lib32-vulkan-validation-layers vulkan-tools lib32-vulkan-tools vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-headers mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver;
+yay -S --noconfirm google-chrome lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-validation-layers lib32-vulkan-validation-layers vulkan-tools lib32-vulkan-tools vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-headers mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --save --answerdiff None --answerclean None --removemake;
+yay -S --noconfirm google-chrome lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-validation-layers lib32-vulkan-validation-layers vulkan-tools lib32-vulkan-tools vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-headers mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver;
 
 grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
 grub-mkconfig -o /boot/grub/grub.cfg
