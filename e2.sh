@@ -21,6 +21,8 @@ echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen;
 echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
 hwclock --systohc && locale-gen;
 
+sed -i '/^\[Seat:\*]/a autologin-user=seu_usuario' /etc/lightdm/lightdm.conf;
+
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
 rm -rf /etc/pacman.d/mirrorlist;
