@@ -16,4 +16,6 @@ dd if=/dev/zero of=/dev/sda bs=1M status=progress;
 
 && genfstab -U -p /mnt >> /mnt/etc/fstab
 
-&& mv AutoArch/e2.sh ~ && chmod 777 e2.sh && cp e2.sh /mnt && arch-chroot /mnt /e2.sh && reboot
+&& mv AutoArch/e2.sh ~ && chmod 777 e2.sh && cp e2.sh /mnt && arch-chroot /mnt /e2.sh
+
+&& reboot
