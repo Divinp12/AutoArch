@@ -2,7 +2,7 @@
 
 dd if=/dev/zero of=/dev/sda bs=1M status=progress;
 
-&& parted /dev/sda mkpart primary 1MiB 1GB && parted /dev/sda set 1 esp on && parted /dev/sda mkpart primary 1GB 21GB && parted /dev/sda mkpart primary 21GB -1
+&& parted -s /dev/sda mkpart primary 1MiB 1GB && parted -s /dev/sda set 1 esp on && parted -s /dev/sda mkpart primary 1GB 21GB && parted -s /dev/sda mkpart primary 21GB -1
 
 && mkfs.fat -F32 /dev/sda1 && mkfs.ext4 /dev/sda2 && mkfs.ext4 /dev/sda3
 
