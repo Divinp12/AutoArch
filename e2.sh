@@ -1,25 +1,18 @@
 #!/bin/bash
 
-echo arch > /etc/hostname;
-yes arch | passwd root;
+echo arch > /etc/hostname && yes arch | passwd root
 
-useradd -m -g users -G wheel arch;
-yes arch | passwd arch;
+&& useradd -m -g users -G wheel arch && yes arch | passwd arch
 
-mkinitcpio -P;
+&& mkinitcpio -P
 
-pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lightdm xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf pipewire pipewire-pulse pipewire-media-session pavucontrol intel-ucode amd-ucode --noconfirm;
+&& pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lightdm xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf pipewire pipewire-pulse pipewire-media-session pavucontrol intel-ucode amd-ucode --noconfirm
 
-systemctl enable lightdm;
-systemctl enable NetworkManager;
+&& systemctl enable lightdm && systemctl enable NetworkManager
 
-systemctl disable NetworkManager-wait-online.service;
-systemctl disable systemd-timesyncd.service;
+&& systemctl disable NetworkManager-wait-online && systemctl disable systemd-timesyncd
 
-ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime;
-echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen;
-echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
-hwclock --systohc && locale-gen;
+&& ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen && echo "LANG=pt_BR.UTF-8" > /etc/locale.conf && hwclock --systohc && locale-gen
 
 sed -i '/^\[Seat:\*]/a autologin-user=arch' /etc/lightdm/lightdm.conf;
 groupadd -r autologin;
