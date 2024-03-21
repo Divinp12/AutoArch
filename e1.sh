@@ -1,9 +1,9 @@
 #!/bin/bash
 
-parted /dev/sdX mkpart primary 1MiB 1GB
-sudo parted /dev/sdX set 1 bios_grub on
-sudo parted /dev/sdX mkpart primary 1GB 21GB
-sudo parted /dev/sdX mkpart primary 21GB -1
+parted /dev/sda mkpart primary 1MiB 1GB;
+parted /dev/sda set 1 bios_grub on;
+parted /dev/sda mkpart primary 1GB 21GB;
+parted /dev/sda mkpart primary 21GB -1;
 
 mkfs.fat -F32 /dev/sda1;
 mkfs.ext4 /dev/sda2;
