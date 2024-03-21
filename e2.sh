@@ -8,9 +8,9 @@ yes arch | passwd arch;
 
 mkinitcpio -P; mkinitcpio -P; mkinitcpio -P;
 
-pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lxdm xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf intel-ucode amd-ucode --noconfirm;
+pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lightdm xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf intel-ucode amd-ucode --noconfirm;
 
-systemctl enable lxdm;
+systemctl enable lightdm;
 systemctl enable NetworkManager;
 
 systemctl disable NetworkManager-wait-online.service;
@@ -67,15 +67,6 @@ echo "[multilib]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist" >> /etc/pacman.conf;
 echo "[community]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
-
-pacman -Syyu --noconfirm;
-
-rm -rf /etc/lxdm/lxdm.conf;
-rm -rf /etc/lxdm/lxdm.conf;
-echo "[default]" > /etc/lxdm/lxdm.conf;
-echo "session=/usr/bin/xfce4-session" >> /etc/lxdm/lxdm.conf;
-echo "[daemon]" >> /etc/lxdm/lxdm.conf;
-echo "autologin=arch" >> /etc/lxdm/lxdm.conf;
 
 pacman -Syyu --noconfirm;
 
