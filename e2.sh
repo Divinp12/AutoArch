@@ -31,8 +31,6 @@ rm -rf /etc/pacman.d/mirrorlist-arch;
 rm -rf /etc/pacman.d/mirrorlist-arch;
 echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist-arch;
 
-pacman -Syyu --noconfirm;
-
 rm -rf /home/arch/.bashrc;
 rm -rf /home/arch/.bashrc;
 echo "alias i='yay -Ss --noconfirm'" > /home/arch/.bashrc;
@@ -47,8 +45,6 @@ echo "sudo pacman -Scc --noconfirm;" >> /home/arch/.bashrc;
 echo "sudo history -c;" >> /home/arch/.bashrc;
 echo "clear;" >> /home/arch/.bashrc;
 echo "fastfetch" >> /home/arch/.bashrc;
-
-pacman -Syyu --noconfirm;
 
 rm -rf /etc/pacmam.conf;
 rm -rf /etc/pacman.conf;
