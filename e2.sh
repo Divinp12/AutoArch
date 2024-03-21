@@ -14,19 +14,13 @@ echo arch > /etc/hostname && yes arch | passwd root
 
 && ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen && echo "LANG=pt_BR.UTF-8" > /etc/locale.conf && hwclock --systohc && locale-gen
 
-sed -i '/^\[Seat:\*]/a autologin-user=arch' /etc/lightdm/lightdm.conf;
-groupadd -r autologin;
-gpasswd -a arch autologin;
+&& sed -i '/^\[Seat:\*]/a autologin-user=arch' /etc/lightdm/lightdm.conf && groupadd -r autologin && gpasswd -a arch autologin
 
-echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
+&& echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-rm -rf /etc/pacman.d/mirrorlist;
-rm -rf /etc/pacman.d/mirrorlist;
-echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist;
+&& rm -rf /etc/pacman.d/mirrorlist && rm -rf /etc/pacman.d/mirrorlist && echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist
 
-rm -rf /etc/pacman.d/mirrorlist-arch;
-rm -rf /etc/pacman.d/mirrorlist-arch;
-echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist-arch;
+&& rm -rf /etc/pacman.d/mirrorlist-arch && rm -rf /etc/pacman.d/mirrorlist-arch && echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist-arch
 
 rm -rf /home/arch/.bashrc;
 rm -rf /home/arch/.bashrc;
