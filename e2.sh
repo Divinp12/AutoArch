@@ -6,9 +6,9 @@ yes arch | passwd root;
 useradd -m -g users -G wheel arch;
 yes arch | passwd arch;
 
-mkinitcpio -P;
+mkinitcpio -P; mkinitcpio -P; mkinitcpio -P;
 
-pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lxdm nano xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf intel-ucode amd-ucode --noconfirm;
+pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch lxdm nano xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf xorg intel-ucode amd-ucode --noconfirm;
 
 systemctl enable lxdm;
 systemctl enable NetworkManager;
