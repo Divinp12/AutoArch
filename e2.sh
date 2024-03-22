@@ -8,7 +8,7 @@ yes arch | passwd arch;
 
 mkinitcpio -P;
 
-pacman -S networkmanager git grub efibootmgr sudo mesa fastfetch xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf pipewire pipewire-pulse pipewire-media-session pavucontrol intel-ucode amd-ucode --noconfirm;
+pacman -S networkmanager git grub efibootmgr mesa fastfetch xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf pipewire pipewire-pulse pipewire-media-session pavucontrol intel-ucode amd-ucode --noconfirm;
 
 systemctl enable NetworkManager;
 systemctl disable NetworkManager-wait-online;
@@ -20,6 +20,7 @@ echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
 hwclock --systohc;
 locale-gen;
 
+pacmam -S sudo --noconfirm;
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
 rm -rf /etc/pacman.d/mirrorlist;
