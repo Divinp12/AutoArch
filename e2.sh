@@ -20,9 +20,6 @@ echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
 hwclock --systohc;
 locale-gen;
 
-pacmam -S sudo --noconfirm;
-echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
-
 rm -rf /etc/pacman.d/mirrorlist;
 rm -rf /etc/pacman.d/mirrorlist;
 echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist;
@@ -63,6 +60,9 @@ echo "[multilib]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist" >> /etc/pacman.conf;
 echo "[community]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
+
+pacmam -S sudo --noconfirm;
+echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
 pacman -S xorg-xinit --noconfirm;
 echo "exec xfce4-session" >> /home/arch/.xinitrc;
