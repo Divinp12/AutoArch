@@ -8,10 +8,8 @@ yes arch | passwd arch;
 
 mkinitcpio -P;
 
-pacman -S networkmanager git mesa fastfetch xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf intel-ucode amd-ucode --noconfirm;
+pacman -S git mesa fastfetch xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf intel-ucode amd-ucode --noconfirm;
 
-systemctl enable NetworkManager;
-systemctl disable NetworkManager-wait-online;
 systemctl disable systemd-timesyncd;
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime;
@@ -66,6 +64,10 @@ echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
 pacman -S xorg-xinit --noconfirm;
 echo "exec xfce4-session" >> /home/arch/.xinitrc;
+
+pacman -S networkmanager --noconfirm;
+systemctl enable NetworkManager;
+systemctl disable NetworkManager-wait-online;
 
 pacman -S pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm;
 
