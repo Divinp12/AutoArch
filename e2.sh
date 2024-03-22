@@ -59,6 +59,8 @@ echo "Include=/etc/pacman.d/mirrorlist" >> /etc/pacman.conf;
 echo "[community]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 
+pacman -Syyu --noconfirm;
+
 pacmam -S sudo --noconfirm;
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
@@ -70,8 +72,6 @@ systemctl enable NetworkManager;
 systemctl disable NetworkManager-wait-online;
 
 pacman -S pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm;
-
-pacman -Syyu --noconfirm;
 
 pacman -S grub efibootmgr --noconfirm;
 grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
