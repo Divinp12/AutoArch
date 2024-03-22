@@ -63,7 +63,8 @@ echo "Include=/etc/pacman.d/mirrorlist" >> /etc/pacman.conf;
 echo "[community]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 
-echo "exec startxfce4" >> /home/arch/.bash_profile;
+pacman -S xorg-xinit --noconfirm;
+echo "exec xfce4-session" >> /home/arch/.xinitrc;
 
 pacman -Syyu --noconfirm;
 
