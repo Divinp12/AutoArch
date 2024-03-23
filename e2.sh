@@ -64,9 +64,6 @@ pacman -Syyu --noconfirm;
 pacmam -S sudo --noconfirm;
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
-pacman -S xorg-xinit --noconfirm;
-echo "exec xfce4-session" >> /home/arch/.xinitrc;
-
 pacman -S networkmanager --noconfirm;
 systemctl enable NetworkManager;
 systemctl disable NetworkManager-wait-online;
