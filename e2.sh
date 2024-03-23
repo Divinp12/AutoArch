@@ -75,6 +75,7 @@ systemctl disable NetworkManager-wait-online;
 
 pacman -S pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm;
 
-pacman -S grub efibootmgr --noconfirm;
-grub-install --target=x86_64-efi --bootloader-id=arch --recheck;
-grub-mkconfig -o /boot/grub/grub.cfg
+pacman -S systemd --noconfirm;
+bootctl install --esp-path=/mnt/boot
+echo "default arch.conf" >> /boot/loader/loader.conf;
+echo "timeout 0" >> /boot/loader/loader.conf;
