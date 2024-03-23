@@ -8,10 +8,6 @@ yes arch | passwd arch;
 
 mkinitcpio -P;
 
-pacman -S git mesa fastfetch xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-terminal xfconf intel-ucode amd-ucode --noconfirm;
-
-systemctl disable systemd-timesyncd;
-
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime;
 echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen;
 echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
@@ -60,6 +56,15 @@ echo "[community]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 
 pacman -Syyu --noconfirm;
+
+pacman -S git mesa fastfetch intel-ucode amd-ucode --noconfirm;
+
+systemctl disable systemd-timesyncd;
+
+pacman -S gnome --noconfirm;
+
+pacman -S gdm --noconfirm;
+systemctl enable gdm;
 
 pacmam -S sudo --noconfirm;
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
