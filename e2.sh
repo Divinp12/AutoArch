@@ -11,8 +11,8 @@ mkinitcpio -P > /dev/null;
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime;
 echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen;
 echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
-hwclock --systohc;
-locale-gen;
+hwclock --systohc > /dev/null;
+locale-gen > /dev/null;
 
 rm -rf /etc/pacman.d/mirrorlist > /dev/null;
 rm -rf /etc/pacman.d/mirrorlist > /dev/null;
@@ -37,8 +37,8 @@ echo "sudo history -c > /dev/null;" >> /home/arch/.bashrc;
 echo "clear;" >> /home/arch/.bashrc;
 echo "fastfetch" >> /home/arch/.bashrc;
 
-rm -rf /etc/pacmam.conf;
-rm -rf /etc/pacman.conf;
+rm -rf /etc/pacmam.conf > /dev/null;
+rm -rf /etc/pacman.conf > /dev/null;
 echo "[options]" > /etc/pacman.conf;
 echo "HoldPkg=pacman glibc" >> /etc/pacman.conf;
 echo "Architecture=auto" >> /etc/pacman.conf;
@@ -55,23 +55,23 @@ echo "Include=/etc/pacman.d/mirrorlist" >> /etc/pacman.conf;
 echo "[community]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 
-pacman -Syyu --noconfirm;
+pacman -Syyu --noconfirm > /dev/null;
 
-pacman -S git mesa fastfetch intel-ucode amd-ucode --noconfirm;
+pacman -S git mesa fastfetch intel-ucode amd-ucode --noconfirm > /dev/null;
 
-systemctl disable systemd-timesyncd;
+systemctl disable systemd-timesyncd > /dev/null;
 
-pacman -S gnome --noconfirm;
+pacman -S gnome --noconfirm > /dev/null;
 
-pacman -S gdm --noconfirm;
-systemctl enable gdm;
+pacman -S gdm --noconfirm > /dev/null;
+systemctl enable gdm > /dev/null;
 
-pacmam -S sudo --noconfirm;
+pacmam -S sudo --noconfirm > /dev/null;
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
 
-pacman -S networkmanager --noconfirm;
-systemctl enable NetworkManager;
-systemctl disable NetworkManager-wait-online;
+pacman -S networkmanager --noconfirm > /dev/null;
+systemctl enable NetworkManager > /dev/null;
+systemctl disable NetworkManager-wait-online > /dev/null;
 
 pacman -S pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm;
 
