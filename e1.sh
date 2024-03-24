@@ -19,7 +19,9 @@ pacstrap /mnt base base-devel linux linux-firmware > /dev/null;
 
 genfstab -U -p /mnt >> /mnt/etc/fstab;
 
-mv AutoArch/e2.sh ~;
-chmod 777 e2.sh;
-cp e2.sh /mnt;
+mv AutoArch/e2.sh ~ > /dev/null;
+chmod 777 e2.sh > /dev/null;
+cp e2.sh /mnt > /dev/null;
 arch-chroot /mnt /e2.sh;
+
+reboot;
