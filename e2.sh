@@ -8,7 +8,7 @@ yes arch | passwd arch > /dev/null;
 
 mkinitcpio -P > /dev/null;
 
-ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime;
+ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime > /dev/null;
 echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen;
 echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
 hwclock --systohc > /dev/null;
@@ -24,7 +24,7 @@ echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pac
 
 rm -rf /home/arch/.bashrc > /dev/null;
 rm -rf /home/arch/.bashrc > /dev/null;
-echo "alias i='yay -Ss --noconfirm'" > /home/arch/.bashrc;
+echo "alias i='yay -S --noconfirm'" > /home/arch/.bashrc;
 echo "alias d='sudo pacman -Rsc'" >> /home/arch/.bashrc;
 echo "alias nano='sudo nano'" >> /home/arch/.bashrc;
 echo "alias addsuporte-bluetooth='yay -S --noconfirm bluez bluez-tools bluez-utils blueman; sudo systemctl start bluetooth.service; sudo systemctl enable bluetooth.service'" >> /home/arch/.bashrc;
