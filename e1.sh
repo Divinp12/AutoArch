@@ -23,3 +23,5 @@ mv AutoArch/e2.sh ~ > /dev/null;
 chmod 777 e2.sh > /dev/null;
 cp e2.sh /mnt > /dev/null;
 arch-chroot /mnt /e2.sh;
+
+reboot;
