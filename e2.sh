@@ -57,7 +57,7 @@ echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 
 pacman -Syyu --noconfirm;
 
-pacman -S git mesa fastfetch intel-ucode --noconfirm;
+pacman -S git mesa fastfetch intel-ucode amd-ucode --noconfirm;
 
 systemctl disable systemd-timesyncd;
 
@@ -75,12 +75,6 @@ systemctl disable NetworkManager-wait-online;
 
 pacman -S pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm;
 
-pacman -S systemd --noconfirm;
-cd /boot;
-bootctl install;
-echo "timeout 0" >> /boot/loader/loader.conf;
-echo "default arch.conf" >> /boot/loader/loader.conf;
-echo "title Arch Linux" >> /boot/loader/entries/arch.conf;
-echo "linux /vmlinuz-linux" >> /boot/loader/entries/arch.conf;
-echo "initrd /intel-ucode.img" >> /boot/loader/entries/arch.conf;
-echo "initrd /initramfs-linux.img" >> /boot/loader/entries/arch.conf;
+pacman -S grub-efi-x86_64 efibootmgr;
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=z --recheck;
+grub-mkconfig -o /boot/grub/grub.cfg;
