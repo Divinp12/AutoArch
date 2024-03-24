@@ -31,9 +31,9 @@ echo "alias addsuporte-bluetooth='yay -S --noconfirm bluez bluez-tools bluez-uti
 echo "sudo pacman-key --refresh-keys > /dev/null;" >> /home/arch/.bashrc;
 echo "sudo rm -rf ~/.bash_history > /dev/null;" >> /home/arch/.bashrc;
 echo "sudo rm -rf ~/.cache > /dev/null;" >> /home/arch/.bashrc;
-echo "sudo pacman -Syyu --noconfirm;" >> /home/arch/.bashrc;
-echo "sudo pacman -Scc --noconfirm;" >> /home/arch/.bashrc;
-echo "sudo history -c;" >> /home/arch/.bashrc;
+echo "sudo pacman -Syyu --noconfirm > /dev/null;" >> /home/arch/.bashrc;
+echo "sudo pacman -Scc --noconfirm > /dev/null;" >> /home/arch/.bashrc;
+echo "sudo history -c > /dev/null;" >> /home/arch/.bashrc;
 echo "clear;" >> /home/arch/.bashrc;
 echo "fastfetch" >> /home/arch/.bashrc;
 
