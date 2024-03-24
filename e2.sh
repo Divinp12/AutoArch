@@ -73,8 +73,8 @@ pacman -S networkmanager --noconfirm > /dev/null;
 systemctl enable NetworkManager > /dev/null;
 systemctl disable NetworkManager-wait-online > /dev/null;
 
-pacman -S pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm;
+pacman -S pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm > /dev/null;
 
-pacman -S grub-efi-x86_64 efibootmgr;
-grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=z --recheck;
-grub-mkconfig -o /boot/grub/grub.cfg;
+pacman -S grub-efi-x86_64 efibootmgr > /dev/null;
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=z --recheck > /dev/null;
+grub-mkconfig -o /boot/grub/grub.cfg > /dev/null;
