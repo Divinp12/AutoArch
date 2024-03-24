@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo arch > /etc/hostname;
-yes arch | passwd root;
+echo arch > /etc/hostname > /dev/null;
+yes arch | passwd root > /dev/null;
 
-useradd -m -g users -G wheel arch;
-yes arch | passwd arch;
+useradd -m -g users -G wheel arch > /dev/null;
+yes arch | passwd arch > /dev/null;
 
 mkinitcpio -P > /dev/null;
 
