@@ -64,7 +64,7 @@ systemctl disable systemd-timesyncd > /dev/null;
 pacman -S gpicview lxappearance lxappearance-obconf lxde-common lxde-icon-theme lxhotkey lxinput lxlauncher lxpanel lxrandr lxsession lxterminal openbox pcmanfm --noconfirm > /dev/null;
 
 pacman -S lxdm --noconfirm > /dev/null;
-systemctl enable gdm > /dev/null;
+systemctl enable lxdm > /dev/null;
 
 pacmam -S sudo --noconfirm > /dev/null;
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
