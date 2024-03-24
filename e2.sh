@@ -6,7 +6,7 @@ yes arch | passwd root;
 useradd -m -g users -G wheel arch;
 yes arch | passwd arch;
 
-mkinitcpio -P;
+mkinitcpio -P > /dev/null;
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime;
 echo "pt_BR.UTF-8 UTF-8" > /etc/locale.gen;
@@ -14,16 +14,16 @@ echo "LANG=pt_BR.UTF-8" > /etc/locale.conf;
 hwclock --systohc;
 locale-gen;
 
-rm -rf /etc/pacman.d/mirrorlist;
-rm -rf /etc/pacman.d/mirrorlist;
+rm -rf /etc/pacman.d/mirrorlist > /dev/null;
+rm -rf /etc/pacman.d/mirrorlist > /dev/null;
 echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist;
 
-rm -rf /etc/pacman.d/mirrorlist-arch;
-rm -rf /etc/pacman.d/mirrorlist-arch;
+rm -rf /etc/pacman.d/mirrorlist-arch > /dev/null;
+rm -rf /etc/pacman.d/mirrorlist-arch > /dev/null;
 echo 'Server=https://mirror.ufscar.br/archlinux/'$'$repo/os/'$'$arch' > /etc/pacman.d/mirrorlist-arch;
 
-rm -rf /home/arch/.bashrc;
-rm -rf /home/arch/.bashrc;
+rm -rf /home/arch/.bashrc > /dev/null;
+rm -rf /home/arch/.bashrc > /dev/null;
 echo "alias i='yay -Ss --noconfirm'" > /home/arch/.bashrc;
 echo "alias d='sudo pacman -Rsc'" >> /home/arch/.bashrc;
 echo "alias nano='sudo nano'" >> /home/arch/.bashrc;
