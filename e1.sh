@@ -3,8 +3,8 @@
 cfdisk /dev/sda;
 
 mkfs.fat -F32 /dev/sda1 > /dev/null;
-mkfs.ext4 /dev/sda2 > /dev/null;
-mkfs.ext4 /dev/sda3 > /dev/null;
+mkfs.ext4 -F /dev/sda2 > /dev/null;
+mkfs.ext4 -F /dev/sda3 > /dev/null;
 
 mount /dev/sda2 /mnt > /dev/null;
 
