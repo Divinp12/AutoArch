@@ -70,8 +70,8 @@ systemctl disable systemd-timesyncd > /dev/null;
 
 pacman -S plasma --noconfirm > /dev/null;
 
-pacman -S lxdm --noconfirm > /dev/null;
-systemctl enable lxdm > /dev/null;
+pacman -S gdm --noconfirm > /dev/null;
+systemctl enable gdm > /dev/null;
 
 pacmam -S sudo --noconfirm > /dev/null;
 echo "arch ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers;
