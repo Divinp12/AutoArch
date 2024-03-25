@@ -68,7 +68,7 @@ pacman -S git mesa fastfetch intel-ucode amd-ucode --noconfirm > /dev/null;
 
 systemctl disable systemd-timesyncd > /dev/null;
 
-pacman -S gpicview lxappearance lxappearance-obconf lxde-common lxde-icon-theme lxhotkey lxinput lxlauncher lxpanel lxrandr lxsession lxterminal openbox pcmanfm --noconfirm > /dev/null;
+pacman -S plasma --noconfirm > /dev/null;
 
 pacman -S lxdm --noconfirm > /dev/null;
 systemctl enable lxdm > /dev/null;
