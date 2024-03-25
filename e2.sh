@@ -40,6 +40,7 @@ echo "sudo pacman -Scc --noconfirm > /dev/null;" >> /home/arch/.bashrc;
 echo "sudo history -c > /dev/null;" >> /home/arch/.bashrc;
 echo "clear;" >> /home/arch/.bashrc;
 echo "fastfetch" >> /home/arch/.bashrc;
+echo "git clone https://aur.archlinux.org/yay.git; sudo chmod 777 yay; cd yay; makepkg -si --noconfirm; cd ..; sudo rm -rf yay; yay -S --noconfirm google-chrome lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-validation-layers lib32-vulkan-validation-layers vulkan-tools lib32-vulkan-tools vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-headers mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --save --answerdiff None --answerclean None --removemake; sed -i '$ d' /home/arch/.bashrc" >> /home/arch/.bashrc;
 
 rm -rf /etc/pacmam.conf > /dev/null;
 rm -rf /etc/pacman.conf > /dev/null;
@@ -84,5 +85,3 @@ pacman -S pipewire pipewire-pulse pipewire-media-session pavucontrol --noconfirm
 pacman -S grub-efi-x86_64 efibootmgr > /dev/null;
 grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=z --recheck > /dev/null;
 grub-mkconfig -o /boot/grub/grub.cfg > /dev/null;
-
-echo "git clone https://aur.archlinux.org/yay.git; sudo chmod 777 yay; cd yay; makepkg -si --noconfirm; cd ..; sudo rm -rf yay; yay -S --noconfirm google-chrome lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-validation-layers lib32-vulkan-validation-layers vulkan-tools lib32-vulkan-tools vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-headers mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --save --answerdiff None --answerclean None --removemake; sed -i '$''$ d' /home/arch/.bash_profile" >> /home/arch/.bash_profile;
