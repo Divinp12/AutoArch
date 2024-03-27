@@ -1,36 +1,26 @@
 #!/bin/bash
 
-echo "o
-w
-" | fdisk /dev/sda
+if [[ $EUID -ne 0 ]]; then
+   echo "Este script deve ser executado como root" 
+   exit 1
+fi
 
-echo "n
-p
-1
+DISK="/dev/sda"
 
-+1G
-" | fdisk /dev/sda
+TOTAL_SECTORS=$(blockdev --getsz "$DISK")
 
-echo "t
-1
-ef02
-w
-" | fdisk /dev/sda
+BIOS_BOOT_SIZE=$((1024*1024*2))
+ROOT_SIZE=$((1024*1024*20))
 
-echo "n
-p
-2
+REST_SIZE=$(($TOTAL_SECTORS - $BIOS_BOOT_SIZE - $ROOT_SIZE))
 
-+20G
-" | fdisk /dev/sda
+sgdisk --clear \
+       --new=1:2048:+${BIOS_BOOT_SIZE} --typecode=1:ef02 --change-name=1:"BIOS boot" \
+       --new=2:0:+${ROOT_SIZE} --typecode=2:8300 --change-name=2:"Raiz (/)" \
+       --new=3:0:+${REST_SIZE} --typecode=3:8300 --change-name=3:"Outros" \
+       --print $DISK
 
-echo "n
-p
-3
-
-
-w
-" | fdisk /dev/sda
+partprobe
 
 mkfs.fat -F32 /dev/sda1 > /dev/null;
 mkfs.ext4 -F /dev/sda2 > /dev/null;
