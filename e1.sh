@@ -2,8 +2,8 @@
 
 cfdisk /dev/sda <<EOF
 gpt
-2048 MiB BIOS_boot
-20480 MiB root /
+2048MiB BIOS_boot
+20480MiB root /
 100% MiB home
 write
 EOF
