@@ -1,10 +1,9 @@
 #!/bin/bash
-# Limpar a tabela de partições existente no dispositivo
+
 echo "o
 w
 " | fdisk /dev/sda
 
-# Criar partição para /boot (1GB)
 echo "n
 p
 1
@@ -12,7 +11,12 @@ p
 +1G
 " | fdisk /dev/sda
 
-# Criar partição para /
+echo "t
+1
+ef02
+w
+" | fdisk /dev/sda
+
 echo "n
 p
 2
@@ -20,7 +24,6 @@ p
 +20G
 " | fdisk /dev/sda
 
-# Criar partição para /home (usando o restante do espaço disponível)
 echo "n
 p
 3
