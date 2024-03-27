@@ -1,42 +1,36 @@
 #!/bin/bash
 
-# Verifica se o script está sendo executado como root
-if [[ $EUID -ne 0 ]]; then
-   echo "Este script deve ser executado como root" 
-   exit 1
-fi
+echo "o
+w" | fdisk /dev/sda
 
-# Determina o dispositivo de bloco para particionamento
-DISK="/dev/sda"
+# Cria a primeira partição de 1GB com tipo BIOS Boot
+echo "n
+p
+1
 
-# Calcula o tamanho total do disco em MB
-TOTAL_SIZE=$(blockdev --getsz "$DISK")
-TOTAL_SIZE_MB=$((TOTAL_SIZE / 2048)) # 1 setor = 512 bytes
++1G
+t
+4
+w" | fdisk /dev/sda
 
-# Calcula o tamanho das partições
-BIOS_BOOT_SIZE_MB=2048   # 1GB em MB
-ROOT_SIZE_MB=20480       # 20GB em MB
+# Cria a segunda partição de 20GB para a raiz
+echo "n
+p
+2
 
-# Calcula o tamanho da partição home (restante do disco)
-HOME_SIZE_MB=$((TOTAL_SIZE_MB - BIOS_BOOT_SIZE_MB - ROOT_SIZE_MB))
++20G
+t
+2
+83
+w" | fdisk /dev/sda
 
-# Limpa a tabela de partições do disco
-echo "Limpar tabela de partições em $DISK"
-dd if=/dev/zero of="$DISK" bs=512 count=1 conv=notrunc
+# Cria a terceira partição com o restante do HD
+echo "n
+p
+3
 
-# Inicia o utilitário de particionamento cfdisk
-echo "Iniciando particionamento com cfdisk em $DISK"
 
-cfdisk "$DISK" <<EOF
-gpt
-$BIOS_BOOT_SIZE_MB MiB BIOS_boot
-$ROOT_SIZE_MB MiB root /
-$HOME_SIZE_MB MiB home
-write
-EOF
-
-# Informa ao kernel para recarregar a tabela de partições
-partprobe
+w" | fdisk /dev/sda
 
 mkfs.fat -F32 /dev/sda1 > /dev/null;
 mkfs.ext4 -F /dev/sda2 > /dev/null;
