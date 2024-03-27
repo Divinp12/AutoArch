@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [[ $EUID -ne 0 ]]; then
-   exit 1
-fi
-
 DISK="/dev/sda"
 
 TOTAL_SECTORS=$(blockdev --getsz "$DISK")
@@ -17,7 +13,7 @@ sgdisk --clear \
        --new=1:2048:+${BIOS_BOOT_SIZE} --typecode=1:ef02 --change-name=1:"BIOS boot" \
        --new=2:0:+${ROOT_SIZE} --typecode=2:8300 --change-name=2:"Raiz (/)" \
        --new=3:0:+${REST_SIZE} --typecode=3:8300 --change-name=3:"Outros" \
-       --print $DISK
+       --print /dev/sda
 
 partprobe
 
