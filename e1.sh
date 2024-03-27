@@ -1,8 +1,6 @@
 #!/bin/bash
 
-DISK="/dev/sda"
-
-TOTAL_SECTORS=$(blockdev --getsz "$DISK")
+TOTAL_SECTORS=$(blockdev --getsz "/dev/sda")
 
 BIOS_BOOT_SIZE=$((1024*1024*2))
 ROOT_SIZE=$((1024*1024*20))
