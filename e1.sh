@@ -1,7 +1,6 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "Este script deve ser executado como root" 
    exit 1
 fi
 
