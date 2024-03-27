@@ -1,6 +1,14 @@
 #!/bin/bash
 
-cfdisk /dev/sda;
+cfdisk /dev/sda <<EOF
+gpt
+2048 MiB BIOS_boot
+20480 MiB root /
+100% MiB home
+write
+EOF
+
+partprobe
 
 mkfs.fat -F32 /dev/sda1 > /dev/null;
 mkfs.ext4 -F /dev/sda2 > /dev/null;
