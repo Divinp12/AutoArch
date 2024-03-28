@@ -1,6 +1,5 @@
 #!/bin/bash
 
-pacman-key --refresh-keys > /dev/null;
 pacman -Syyu --noconfirm > /dev/null;
 pacman -Scc --noconfirm > /dev/null;
 
@@ -64,7 +63,6 @@ echo "[community]" >> /etc/pacman.conf;
 echo "Include=/etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf;
 
 pacman -Syyu --noconfirm > /dev/null;
-pacman-key --refresh-keys > /dev/null;
 pacman -Scc --noconfirm > /dev/null;
 
 pacman -S git mesa fastfetch intel-ucode amd-ucode --noconfirm > /dev/null;
