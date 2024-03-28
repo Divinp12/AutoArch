@@ -3,9 +3,11 @@
 pacman -Syyu --noconfirm > /dev/null;
 pacman -Scc --noconfirm > /dev/null;
 
-echo arch > /etc/hostname > /dev/null; yes arch | passwd root > /dev/null;
+echo arch > /etc/hostname > /dev/null;
+yes arch | passwd root > /dev/null;
 
-useradd -m -g users -G wheel arch > /dev/null; yes arch | passwd arch > /dev/null;
+useradd -m -g users -G wheel arch > /dev/null;
+yes arch | passwd arch > /dev/null;
 
 mkinitcpio -P > /dev/null;
 
